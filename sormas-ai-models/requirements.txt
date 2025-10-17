@@ -1,0 +1,45 @@
+# SORMAS AI Models - Python Dependencies
+
+# Web Framework
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+pydantic==2.5.0
+
+# Machine Learning
+scikit-learn==1.3.2
+numpy==1.24.3
+pandas==2.1.3
+tensorflow==2.15.0
+torch==2.1.1
+xgboost==2.0.2
+
+# Time Series
+prophet==1.1.5
+statsmodels==0.14.0
+
+# NLP
+transformers==4.35.2
+spacy==3.7.2
+
+# Model Management
+mlflow==2.9.1
+joblib==1.3.2
+
+# Database
+psycopg2-binary==2.9.9
+sqlalchemy==2.0.23
+
+# HTTP Client
+httpx==0.25.2
+requests==2.31.0
+
+# Monitoring
+prometheus-client==0.19.0
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+
+# Utilities
+python-dotenv==1.0.0
+pyyaml==6.0.1

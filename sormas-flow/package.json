@@ -1,0 +1,51 @@
+{
+  "name": "sormas-flow",
+  "version": "1.103.0",
+  "description": "SORMAS AI - Modern Web UI with Vaadin Flow",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@polymer/polymer": "^3.5.1",
+    "@vaadin/accordion": "24.3.0",
+    "@vaadin/app-layout": "24.3.0",
+    "@vaadin/avatar": "24.3.0",
+    "@vaadin/button": "24.3.0",
+    "@vaadin/charts": "24.3.0",
+    "@vaadin/checkbox": "24.3.0",
+    "@vaadin/combo-box": "24.3.0",
+    "@vaadin/confirm-dialog": "24.3.0",
+    "@vaadin/custom-field": "24.3.0",
+    "@vaadin/date-picker": "24.3.0",
+    "@vaadin/date-time-picker": "24.3.0",
+    "@vaadin/details": "24.3.0",
+    "@vaadin/dialog": "24.3.0",
+    "@vaadin/form-layout": "24.3.0",
+    "@vaadin/grid": "24.3.0",
+    "@vaadin/horizontal-layout": "24.3.0",
+    "@vaadin/icon": "24.3.0",
+    "@vaadin/icons": "24.3.0",
+    "@vaadin/notification": "24.3.0",
+    "@vaadin/progress-bar": "24.3.0",
+    "@vaadin/radio-group": "24.3.0",
+    "@vaadin/select": "24.3.0",
+    "@vaadin/split-layout": "24.3.0",
+    "@vaadin/tabs": "24.3.0",
+    "@vaadin/text-field": "24.3.0",
+    "@vaadin/upload": "24.3.0",
+    "@vaadin/vertical-layout": "24.3.0",
+    "lit": "^3.1.0",
+    "highcharts": "^11.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/node": "^20.11.0",
+    "rollup": "^4.9.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.11",
+    "workbox-cli": "^7.0.0"
+  },
+  "vaadin": {
+    "dependencies": {},
+    "devDependencies": {},
+    "hash": ""
+  }
+}

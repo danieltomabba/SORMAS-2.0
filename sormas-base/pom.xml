@@ -1947,5 +1947,9 @@
 		<module>../sormas-ui</module>
 		<module>../sormas-serverlibs</module>
 		<module>../sormas-cargoserver</module>
+		<!-- AI Modules -->
+		<module>../sormas-ai-api</module>
+		<module>../sormas-ai-backend</module>
+		<module>../sormas-flow</module>
 	</modules>
 </project>

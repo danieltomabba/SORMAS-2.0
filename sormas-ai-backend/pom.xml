@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>de.symeda.sormas</groupId>
+        <artifactId>sormas-base</artifactId>
+        <version>1.103.0-SNAPSHOT</version>
+        <relativePath>../sormas-base</relativePath>
+    </parent>
+
+    <artifactId>sormas-ai-backend</artifactId>
+    <packaging>ejb</packaging>
+    <name>SORMAS AI Backend</name>
+    <description>AI processing engine and services for SORMAS</description>
+
+    <dependencies>
+        <!-- SORMAS AI API -->
+        <dependency>
+            <groupId>de.symeda.sormas</groupId>
+            <artifactId>sormas-ai-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- SORMAS Core Dependencies -->
+        <dependency>
+            <groupId>de.symeda.sormas</groupId>
+            <artifactId>sormas-api</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>de.symeda.sormas</groupId>
+            <artifactId>sormas-backend</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!-- Jakarta EE -->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+        </dependency>
+
+        <!-- HTTP Client for AI service calls -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+        </dependency>
+
+        <!-- SLF4J Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+
+        <!-- Test Dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-ejb-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

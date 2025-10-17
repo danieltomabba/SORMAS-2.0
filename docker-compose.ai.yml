@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    container_name: sormas-postgres
+    environment:
+      POSTGRES_DB: sormas
+      POSTGRES_USER: sormas
+      POSTGRES_PASSWORD: sormas
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - sormas-network
+
+  # SORMAS AI Service (Python/FastAPI)
+  sormas-ai:
+    build:
+      context: ./sormas-ai-models
+      dockerfile: Dockerfile
+    container_name: sormas-ai-service
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://sormas:sormas@postgres:5432/sormas
+      - MODEL_PATH=/app/models/trained
+      - LOG_LEVEL=INFO
+    volumes:
+      - ./sormas-ai-models/models:/app/models
+      - ./sormas-ai-models/logs:/app/logs
+    depends_on:
+      - postgres
+    networks:
+      - sormas-network
+    restart: unless-stopped
+
+  # MLflow Tracking Server
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.9.1
+    container_name: sormas-mlflow
+    ports:
+      - "5000:5000"
+    environment:
+      - BACKEND_STORE_URI=postgresql://sormas:sormas@postgres:5432/mlflow
+      - DEFAULT_ARTIFACT_ROOT=/mlflow/artifacts
+    volumes:
+      - mlflow-artifacts:/mlflow/artifacts
+    depends_on:
+      - postgres
+    networks:
+      - sormas-network
+    command: >
+      mlflow server
+      --backend-store-uri postgresql://sormas:sormas@postgres:5432/mlflow
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    restart: unless-stopped
+
+  # Redis for caching (optional but recommended)
+  redis:
+    image: redis:7-alpine
+    container_name: sormas-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - sormas-network
+    restart: unless-stopped
+
+volumes:
+  postgres-data:
+  mlflow-artifacts:
+  redis-data:
+
+networks:
+  sormas-network:
+    driver: bridge

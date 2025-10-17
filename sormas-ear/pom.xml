@@ -23,8 +23,15 @@
 			<artifactId>sormas-backend</artifactId>
 			<version>${project.version}</version>
 			<type>ejb</type>
-		</dependency>		
-		<!-- 
+		</dependency>
+		<!-- AI Backend Module -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>sormas-ai-backend</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+		<!--
 		<dependency>
 			<groupId>${project.groupId}</groupId>
 			<artifactId>sormas-rest</artifactId>
@@ -54,7 +61,12 @@
 							<artifactId>sormas-backend</artifactId>
 							<bundleFileName>sormas-backend.jar</bundleFileName>
 						</ejbModule>
-						<!-- 
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>sormas-ai-backend</artifactId>
+							<bundleFileName>sormas-ai-backend.jar</bundleFileName>
+						</ejbModule>
+						<!--
 						<webModule>
 							<groupId>${project.groupId}</groupId>
 							<artifactId>sormas-rest</artifactId>
