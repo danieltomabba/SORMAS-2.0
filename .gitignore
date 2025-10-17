@@ -46,3 +46,46 @@ bin
 /sormas-e2e-tests/logs
 
 .DS_Store
+
+# AI Module specific
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+ENV/
+env/
+.venv
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+
+# AI Models and Data
+sormas-ai-models/models/trained/*.pkl
+sormas-ai-models/models/trained/*.h5
+sormas-ai-models/models/trained/*.pt
+sormas-ai-models/models/trained/*.pth
+sormas-ai-models/models/trained/*.joblib
+sormas-ai-models/data/
+sormas-ai-models/logs/*.log
+sormas-ai-models/.env
+
+# MLflow
+mlflow/
+mlruns/
+mlartifacts/
+
+# Node modules for Vaadin Flow
+sormas-flow/node_modules/
+sormas-flow/package-lock.json
+sormas-flow/frontend/generated/
+sormas-flow/src/main/frontend/generated/
+sormas-flow/.vaadin/
+
+# Docker volumes
+postgres-data/
+redis-data/
